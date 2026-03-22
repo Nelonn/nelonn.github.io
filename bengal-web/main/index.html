@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengal Compiler Explorer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #1e1e1e; overflow: hidden; }
+    </style>
+<link rel="modulepreload" href="./bengal-web-3e51b6175630c59f.js" crossorigin="anonymous" integrity="sha384-WbFJMritWs8/VSOtCOhudSSSexTCwvnDzc3bBQYOXBh42ifgpUIYiY5Y9Iuy0VSC"><link rel="preload" href="./bengal-web-3e51b6175630c59f_bg.wasm" crossorigin="anonymous" integrity="sha384-zw4BBQ8RpD5XGSmaZI1HshoilkYbnH1YTHivv5FViYz7Y1HsNz/DTAHKkHzkaZdD" as="fetch" type="application/wasm"></head>
+<body>
+    <div id="root"></div>
+
+<script type="module">
+import init, * as bindings from './bengal-web-3e51b6175630c59f.js';
+const wasm = await init({ module_or_path: './bengal-web-3e51b6175630c59f_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>
